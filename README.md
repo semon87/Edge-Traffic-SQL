@@ -1,14 +1,13 @@
 # Edge-Traffic-SQL
 
-**Concurrent Edge Vehicle Tracking and Natural-Language Text-to-SQL Analytics on NVIDIA Jetson**
+**Concurrent Vehicle Analytics and Natural-Language Querying with On-Device Small Language Models**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Hardware: Jetson Orin Nano](https://img.shields.io/badge/Hardware-NVIDIA%20Jetson%20Orin%20Nano%20(8GB)-76B900.svg)](https://developer.nvidia.com/embedded/jetson-orin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Official repository for the paper:  
-> **"Edge-Traffic-SQL: Concurrent Edge Vehicle Tracking and Natural-Language Text-to-SQL Analytics on NVIDIA Jetson"**  
-> *Ashraful Islam Semon et al., Chittagong University of Engineering and Technology (CUET)*
+> **"Edge-Traffic-SQL: Concurrent Vehicle Analytics and Natural-Language Querying with On-Device Small Language Models"**
 
 ---
 
@@ -161,21 +160,6 @@ python benchmark_storage_contention.py --duration 15 --readers 4 --busy-timeout 
 ```bash
 python generate_fig4.py  # Generates fig_accuracy_tiers.pdf and fig_accuracy_tiers.png
 python generate_fig5.py  # Generates fig_wal_latency.pdf and fig_wal_latency.png
-```
-
----
-
-## Citation
-
-If you use Edge-Traffic-SQL or the query benchmark in your research, please cite our paper:
-
-```bibtex
-@inproceedings{semon2026edgetrafficsql,
-  title={{Edge-Traffic-SQL: Concurrent Edge Vehicle Tracking and Natural-Language Text-to-SQL Analytics on NVIDIA Jetson}},
-  author={Ashraful Islam Semon and Contributors},
-  booktitle={IEEE Conference Proceedings},
-  year={2026}
-}
 ```
 
 ---
