@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-11-07T21:07:53.992060",
+  "configuration": {
+    "duration_seconds": 10,
+    "concurrent_readers": 4,
+    "busy_timeout_ms": 10
+  },
+  "results": {
+    "rollback_journal": {
+      "regime": "Rollback Journal (Baseline)",
+      "journal_mode": "DELETE",
+      "duration_seconds": 10.04,
+      "num_readers": 4,
+      "busy_timeout_ms": 10,
+      "reads_attempted": 1534,
+      "reads_succeeded": 1534,
+      "read_lock_errors": 0,
+      "read_failure_rate_pct": 0.0,
+      "read_throughput_qps": 152.8,
+      "mean_read_latency_ms": 2.58,
+      "median_read_latency_ms": 0.81,
+      "p95_read_latency_ms": 16.5,
+      "p99_read_latency_ms": 31.42,
+      "max_read_latency_ms": 33.51,
+      "writes_attempted": 26,
+      "writes_succeeded": 26,
+      "write_lock_errors": 0,
+      "write_failure_rate_pct": 0.0,
+      "write_throughput_tps": 2.6,
+      "mean_write_latency_ms": 19.91
+    },
+    "write_ahead_logging": {
+      "regime": "Write-Ahead Logging (Edge-Traffic-SQL)",
+      "journal_mode": "WAL",
+      "duration_seconds": 10.05,
+      "num_readers": 4,
+      "busy_timeout_ms": 10,
+      "reads_attempted": 1661,
+      "reads_succeeded": 1661,
+      "read_lock_errors": 0,
+      "read_failure_rate_pct": 0.0,
+      "read_throughput_qps": 165.3,
+      "mean_read_latency_ms": 0.78,
+      "median_read_latency_ms": 0.75,
+      "p95_read_latency_ms": 1.57,
+      "p99_read_latency_ms": 2.59,
+      "max_read_latency_ms": 19.16,
+      "writes_attempted": 27,
+      "writes_succeeded": 27,
+      "write_lock_errors": 0,
+      "write_failure_rate_pct": 0.0,
+      "write_throughput_tps": 2.7,
+      "mean_write_latency_ms": 2.31
+    }
+  }
+}

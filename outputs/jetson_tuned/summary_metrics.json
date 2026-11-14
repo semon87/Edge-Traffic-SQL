@@ -1,0 +1,30 @@
+{
+  "model_name": "qwen2.5-coder:3b",
+  "provider": "ollama",
+  "total_queries": 60,
+  "valid_sql_rate_percent": 100.0,
+  "execution_accuracy_percent": 81.67,
+  "semantic_intent_accuracy_percent": 95.0,
+  "mean_latency_seconds": 1.903,
+  "by_difficulty": {
+    "Simple": {
+      "total": 20,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 100.0,
+      "semantic_intent_accuracy_percent": 100.0
+    },
+    "Intermediate": {
+      "total": 20,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 85.0,
+      "semantic_intent_accuracy_percent": 95.0
+    },
+    "Advanced": {
+      "total": 20,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 60.0,
+      "semantic_intent_accuracy_percent": 90.0
+    }
+  },
+  "benchmark_protocol": "Strictly Disjoint Few-Shot Prompting (Zero Data Leakage, 60 Standardized Queries)"
+}

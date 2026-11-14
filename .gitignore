@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+env/
+
+# IDE / Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Database temporary WAL and backup files
+*.sqlite-wal
+*.sqlite-shm
+*.bak
+*.log
+
+# Large raw video datasets (UA-DETRAC raw videos should be downloaded separately)
+*.mp4
+*.avi
+*.mkv
+DETRAC-train-data-full/
+UA-DETRAC/
+models/weights/*.pt
+models/weights/*.engine

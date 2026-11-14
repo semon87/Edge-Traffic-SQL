@@ -1,0 +1,362 @@
+[
+  {
+    "id": "Q01",
+    "difficulty": "Simple",
+    "question": "How many total vehicle tracks are recorded in the database?",
+    "ground_truth_sql": "SELECT COUNT(*) AS total_vehicles FROM vehicle_tracks;"
+  },
+  {
+    "id": "Q02",
+    "difficulty": "Simple",
+    "question": "How many buses were detected in total?",
+    "ground_truth_sql": "SELECT COUNT(*) AS bus_count FROM vehicle_tracks WHERE vehicle_type = 'bus';"
+  },
+  {
+    "id": "Q03",
+    "difficulty": "Simple",
+    "question": "How many trucks were detected across all sequences?",
+    "ground_truth_sql": "SELECT COUNT(*) AS truck_count FROM vehicle_tracks WHERE vehicle_type = 'truck';"
+  },
+  {
+    "id": "Q04",
+    "difficulty": "Simple",
+    "question": "How many white cars were detected?",
+    "ground_truth_sql": "SELECT COUNT(*) AS white_cars FROM vehicle_tracks WHERE vehicle_type = 'car' AND vehicle_colour = 'white';"
+  },
+  {
+    "id": "Q05",
+    "difficulty": "Simple",
+    "question": "How many motorcycles were recorded?",
+    "ground_truth_sql": "SELECT COUNT(*) AS motorcycle_count FROM vehicle_tracks WHERE vehicle_type = 'motorcycle';"
+  },
+  {
+    "id": "Q06",
+    "difficulty": "Simple",
+    "question": "How many vehicles moved downwards?",
+    "ground_truth_sql": "SELECT COUNT(*) AS downward_vehicles FROM vehicle_tracks WHERE movement_direction = 'down';"
+  },
+  {
+    "id": "Q07",
+    "difficulty": "Simple",
+    "question": "How many vehicles moved upwards?",
+    "ground_truth_sql": "SELECT COUNT(*) AS upward_vehicles FROM vehicle_tracks WHERE movement_direction = 'up';"
+  },
+  {
+    "id": "Q08",
+    "difficulty": "Simple",
+    "question": "How many vehicles were detected in sequence detrac_1_MVI_20011?",
+    "ground_truth_sql": "SELECT COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE sequence_id = 'detrac_1_MVI_20011';"
+  },
+  {
+    "id": "Q09",
+    "difficulty": "Simple",
+    "question": "How many video sequences were processed?",
+    "ground_truth_sql": "SELECT COUNT(*) AS total_sequences FROM sequences;"
+  },
+  {
+    "id": "Q10",
+    "difficulty": "Simple",
+    "question": "How many red vehicles were recorded in total?",
+    "ground_truth_sql": "SELECT COUNT(*) AS red_vehicle_count FROM vehicle_tracks WHERE vehicle_colour = 'red';"
+  },
+  {
+    "id": "Q11",
+    "difficulty": "Simple",
+    "question": "How many vehicles detected were NOT cars?",
+    "ground_truth_sql": "SELECT COUNT(*) AS non_car_count FROM vehicle_tracks WHERE vehicle_type != 'car';"
+  },
+  {
+    "id": "Q12",
+    "difficulty": "Simple",
+    "question": "How many black or silver vehicles were detected?",
+    "ground_truth_sql": "SELECT COUNT(*) AS black_or_silver_count FROM vehicle_tracks WHERE vehicle_colour IN ('black', 'silver');"
+  },
+  {
+    "id": "Q13",
+    "difficulty": "Simple",
+    "question": "In how many distinct sequences were buses observed?",
+    "ground_truth_sql": "SELECT COUNT(DISTINCT sequence_id) AS bus_sequences FROM vehicle_tracks WHERE vehicle_type = 'bus';"
+  },
+  {
+    "id": "Q14",
+    "difficulty": "Simple",
+    "question": "How many vehicles had a known movement direction?",
+    "ground_truth_sql": "SELECT COUNT(*) AS known_direction_count FROM vehicle_tracks WHERE movement_direction != 'unknown';"
+  },
+  {
+    "id": "Q15",
+    "difficulty": "Simple",
+    "question": "What is the highest frame count recorded by any sequence?",
+    "ground_truth_sql": "SELECT MAX(total_frames) AS max_frames FROM sequences;"
+  },
+  {
+    "id": "Q16",
+    "difficulty": "Simple",
+    "question": "How many vehicles did NOT commit a speeding violation?",
+    "ground_truth_sql": "SELECT COUNT(*) AS non_speeding_count FROM vehicle_tracks WHERE is_speeding = 0;"
+  },
+  {
+    "id": "Q17",
+    "difficulty": "Simple",
+    "question": "How many total vehicles were detected in sequence detrac_6_MVI_20035?",
+    "ground_truth_sql": "SELECT COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE sequence_id = 'detrac_6_MVI_20035';"
+  },
+  {
+    "id": "Q18",
+    "difficulty": "Simple",
+    "question": "What is the shortest vehicle dwell duration recorded in the database?",
+    "ground_truth_sql": "SELECT MIN(observed_duration_seconds) AS min_duration FROM vehicle_tracks;"
+  },
+  {
+    "id": "Q19",
+    "difficulty": "Simple",
+    "question": "How many blue vehicles were detected in total?",
+    "ground_truth_sql": "SELECT COUNT(*) AS blue_vehicle_count FROM vehicle_tracks WHERE vehicle_colour = 'blue';"
+  },
+  {
+    "id": "Q20",
+    "difficulty": "Simple",
+    "question": "How many sequences have a frame height of 540 pixels?",
+    "ground_truth_sql": "SELECT COUNT(*) AS seq_count FROM sequences WHERE frame_height = 540;"
+  },
+  {
+    "id": "Q21",
+    "difficulty": "Intermediate",
+    "question": "What is the average dwell time in seconds for cars across all sequences?",
+    "ground_truth_sql": "SELECT AVG(observed_duration_seconds) AS avg_car_duration FROM vehicle_tracks WHERE vehicle_type = 'car';"
+  },
+  {
+    "id": "Q22",
+    "difficulty": "Intermediate",
+    "question": "What is the average speed in km/h for all detected trucks?",
+    "ground_truth_sql": "SELECT AVG(avg_speed_kmh) AS avg_truck_speed FROM vehicle_tracks WHERE vehicle_type = 'truck' AND avg_speed_kmh > 0;"
+  },
+  {
+    "id": "Q23",
+    "difficulty": "Intermediate",
+    "question": "How many speeding vehicles (over 50 km/h) were detected?",
+    "ground_truth_sql": "SELECT COUNT(*) AS speeding_count FROM vehicle_tracks WHERE is_speeding = 1;"
+  },
+  {
+    "id": "Q24",
+    "difficulty": "Intermediate",
+    "question": "What is the maximum observed vehicle speed in the database?",
+    "ground_truth_sql": "SELECT MAX(avg_speed_kmh) AS max_speed FROM vehicle_tracks;"
+  },
+  {
+    "id": "Q25",
+    "difficulty": "Intermediate",
+    "question": "How many trucks were detected in sequence detrac_13_MVI_20065?",
+    "ground_truth_sql": "SELECT COUNT(*) AS truck_count FROM vehicle_tracks WHERE vehicle_type = 'truck' AND sequence_id = 'detrac_13_MVI_20065';"
+  },
+  {
+    "id": "Q26",
+    "difficulty": "Intermediate",
+    "question": "How many red cars moved left?",
+    "ground_truth_sql": "SELECT COUNT(*) AS red_left_cars FROM vehicle_tracks WHERE vehicle_type = 'car' AND vehicle_colour = 'red' AND movement_direction = 'left';"
+  },
+  {
+    "id": "Q27",
+    "difficulty": "Intermediate",
+    "question": "What is the total number of frames in sequence detrac_14_MVI_39761?",
+    "ground_truth_sql": "SELECT total_frames FROM sequences WHERE sequence_id = 'detrac_14_MVI_39761';"
+  },
+  {
+    "id": "Q28",
+    "difficulty": "Intermediate",
+    "question": "How many heavy vehicles (buses or trucks) were detected in sequence detrac_2_MVI_20012?",
+    "ground_truth_sql": "SELECT COUNT(*) AS heavy_vehicle_count FROM vehicle_tracks WHERE sequence_id = 'detrac_2_MVI_20012' AND vehicle_type IN ('bus', 'truck');"
+  },
+  {
+    "id": "Q29",
+    "difficulty": "Intermediate",
+    "question": "What was the average number of observations per vehicle track?",
+    "ground_truth_sql": "SELECT AVG(number_of_observations) AS avg_observations FROM vehicle_tracks;"
+  },
+  {
+    "id": "Q30",
+    "difficulty": "Intermediate",
+    "question": "How many vehicles have an unknown movement direction?",
+    "ground_truth_sql": "SELECT COUNT(*) AS unknown_direction_count FROM vehicle_tracks WHERE movement_direction = 'unknown';"
+  },
+  {
+    "id": "Q31",
+    "difficulty": "Intermediate",
+    "question": "How many vehicles stayed in view between 5 and 15 seconds?",
+    "ground_truth_sql": "SELECT COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE observed_duration_seconds BETWEEN 5.0 AND 15.0;"
+  },
+  {
+    "id": "Q32",
+    "difficulty": "Intermediate",
+    "question": "How many grey or silver cars moved downwards?",
+    "ground_truth_sql": "SELECT COUNT(*) AS car_count FROM vehicle_tracks WHERE vehicle_type = 'car' AND vehicle_colour IN ('grey', 'silver') AND movement_direction = 'down';"
+  },
+  {
+    "id": "Q33",
+    "difficulty": "Intermediate",
+    "question": "What is the average speed of speeding cars?",
+    "ground_truth_sql": "SELECT AVG(avg_speed_kmh) AS avg_speeding_car_speed FROM vehicle_tracks WHERE vehicle_type = 'car' AND is_speeding = 1;"
+  },
+  {
+    "id": "Q34",
+    "difficulty": "Intermediate",
+    "question": "How many total vehicles were observed across sequences detrac_1_MVI_20011 and detrac_2_MVI_20012 combined?",
+    "ground_truth_sql": "SELECT COUNT(*) AS total_vehicles FROM vehicle_tracks WHERE sequence_id IN ('detrac_1_MVI_20011', 'detrac_2_MVI_20012');"
+  },
+  {
+    "id": "Q35",
+    "difficulty": "Intermediate",
+    "question": "How many vehicles entered the camera view after 4 PM (16:00) today?",
+    "ground_truth_sql": "SELECT COUNT(*) AS late_vehicles FROM vehicle_tracks WHERE (date(entry_datetime) = '2026-11-05' OR date(entry_datetime) = CURRENT_DATE) AND time(entry_datetime) >= '16:00:00';"
+  },
+  {
+    "id": "Q36",
+    "difficulty": "Intermediate",
+    "question": "How many cars were traveling at speeds between 30 and 50 km/h?",
+    "ground_truth_sql": "SELECT COUNT(*) AS moderate_speed_cars FROM vehicle_tracks WHERE vehicle_type = 'car' AND avg_speed_kmh BETWEEN 30.0 AND 50.0;"
+  },
+  {
+    "id": "Q37",
+    "difficulty": "Intermediate",
+    "question": "What is the maximum dwell time among all buses recorded in the database?",
+    "ground_truth_sql": "SELECT MAX(observed_duration_seconds) AS max_bus_duration FROM vehicle_tracks WHERE vehicle_type = 'bus';"
+  },
+  {
+    "id": "Q38",
+    "difficulty": "Intermediate",
+    "question": "What was the lowest non-zero speed recorded by any truck?",
+    "ground_truth_sql": "SELECT MIN(avg_speed_kmh) AS min_truck_speed FROM vehicle_tracks WHERE vehicle_type = 'truck' AND avg_speed_kmh > 0;"
+  },
+  {
+    "id": "Q39",
+    "difficulty": "Intermediate",
+    "question": "How many vehicles moved either left or right?",
+    "ground_truth_sql": "SELECT COUNT(*) AS lateral_vehicles FROM vehicle_tracks WHERE movement_direction IN ('left', 'right');"
+  },
+  {
+    "id": "Q40",
+    "difficulty": "Intermediate",
+    "question": "How many speeding vehicles were recorded in sequence detrac_5_MVI_20034?",
+    "ground_truth_sql": "SELECT COUNT(*) AS speeding_count FROM vehicle_tracks WHERE sequence_id = 'detrac_5_MVI_20034' AND is_speeding = 1;"
+  },
+  {
+    "id": "Q41",
+    "difficulty": "Advanced",
+    "question": "Count the number of vehicles for each vehicle type.",
+    "ground_truth_sql": "SELECT vehicle_type, COUNT(*) AS count FROM vehicle_tracks GROUP BY vehicle_type ORDER BY count DESC;"
+  },
+  {
+    "id": "Q42",
+    "difficulty": "Advanced",
+    "question": "Show the count of vehicles moving in each direction excluding unknown directions.",
+    "ground_truth_sql": "SELECT movement_direction, COUNT(*) AS count FROM vehicle_tracks WHERE movement_direction != 'unknown' GROUP BY movement_direction ORDER BY count DESC;"
+  },
+  {
+    "id": "Q43",
+    "difficulty": "Advanced",
+    "question": "Which 3 video sequences had the highest total vehicle counts?",
+    "ground_truth_sql": "SELECT sequence_id, COUNT(*) AS vehicle_count FROM vehicle_tracks GROUP BY sequence_id ORDER BY vehicle_count DESC LIMIT 3;"
+  },
+  {
+    "id": "Q44",
+    "difficulty": "Advanced",
+    "question": "What is the average dwell duration and speed of vehicles grouped by vehicle type?",
+    "ground_truth_sql": "SELECT vehicle_type, AVG(observed_duration_seconds) AS avg_duration, AVG(avg_speed_kmh) AS avg_speed FROM vehicle_tracks GROUP BY vehicle_type ORDER BY avg_speed DESC;"
+  },
+  {
+    "id": "Q45",
+    "difficulty": "Advanced",
+    "question": "Find the details of the single vehicle that stayed in the camera view the longest.",
+    "ground_truth_sql": "SELECT sequence_id, track_id, vehicle_type, vehicle_colour, observed_duration_seconds FROM vehicle_tracks ORDER BY observed_duration_seconds DESC LIMIT 1;"
+  },
+  {
+    "id": "Q46",
+    "difficulty": "Advanced",
+    "question": "Today between 3-4 pm, which red vehicles moved left?",
+    "ground_truth_sql": "SELECT sequence_id, track_id, vehicle_type, vehicle_colour, movement_direction, avg_speed_kmh, entry_datetime FROM vehicle_tracks WHERE vehicle_colour = 'red' AND movement_direction = 'left' AND (date(entry_datetime) = '2026-11-05' OR date(entry_datetime) = CURRENT_DATE) AND time(entry_datetime) BETWEEN '15:00:00' AND '16:00:00' ORDER BY entry_datetime ASC;"
+  },
+  {
+    "id": "Q47",
+    "difficulty": "Advanced",
+    "question": "Which hour of the day had the highest volume of vehicle traffic?",
+    "ground_truth_sql": "SELECT strftime('%H:00', entry_datetime) AS hour_of_day, COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE (date(entry_datetime) = '2026-11-05' OR date(entry_datetime) = CURRENT_DATE) GROUP BY hour_of_day ORDER BY vehicle_count DESC LIMIT 1;"
+  },
+  {
+    "id": "Q48",
+    "difficulty": "Advanced",
+    "question": "List each sequence along with its total vehicle count and FPS.",
+    "ground_truth_sql": "SELECT s.sequence_id, s.fps, COUNT(t.id) AS total_vehicles FROM sequences s LEFT JOIN vehicle_tracks t ON s.sequence_id = t.sequence_id GROUP BY s.sequence_id ORDER BY total_vehicles DESC;"
+  },
+  {
+    "id": "Q49",
+    "difficulty": "Advanced",
+    "question": "Find the total count and average speed of speeding vehicles grouped by vehicle type.",
+    "ground_truth_sql": "SELECT vehicle_type, COUNT(*) AS speeding_count, AVG(avg_speed_kmh) AS avg_speed FROM vehicle_tracks WHERE is_speeding = 1 GROUP BY vehicle_type ORDER BY speeding_count DESC;"
+  },
+  {
+    "id": "Q50",
+    "difficulty": "Advanced",
+    "question": "Find the top 3 fastest vehicles recorded across all sequences with their speed, type, and timestamp.",
+    "ground_truth_sql": "SELECT sequence_id, track_id, vehicle_type, vehicle_colour, avg_speed_kmh, entry_datetime FROM vehicle_tracks ORDER BY avg_speed_kmh DESC LIMIT 3;"
+  },
+  {
+    "id": "Q51",
+    "difficulty": "Advanced",
+    "question": "List all vehicle types that have more than 50 total records in the database.",
+    "ground_truth_sql": "SELECT vehicle_type, COUNT(*) AS total_count FROM vehicle_tracks GROUP BY vehicle_type HAVING total_count > 50 ORDER BY total_count DESC;"
+  },
+  {
+    "id": "Q52",
+    "difficulty": "Advanced",
+    "question": "List all video sequences that recorded at least one speeding vehicle.",
+    "ground_truth_sql": "SELECT DISTINCT s.sequence_id, s.video_filename FROM sequences s JOIN vehicle_tracks t ON s.sequence_id = t.sequence_id WHERE t.is_speeding = 1 ORDER BY s.sequence_id ASC;"
+  },
+  {
+    "id": "Q53",
+    "difficulty": "Advanced",
+    "question": "What is the total vehicle count and average speed for each vehicle color?",
+    "ground_truth_sql": "SELECT vehicle_colour, COUNT(*) AS vehicle_count, AVG(avg_speed_kmh) AS avg_speed FROM vehicle_tracks GROUP BY vehicle_colour ORDER BY vehicle_count DESC;"
+  },
+  {
+    "id": "Q54",
+    "difficulty": "Advanced",
+    "question": "Show the hourly distribution of vehicle traffic today from 8 AM to 6 PM.",
+    "ground_truth_sql": "SELECT strftime('%H:00', entry_datetime) AS hour_window, COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE (date(entry_datetime) = '2026-11-05' OR date(entry_datetime) = CURRENT_DATE) GROUP BY hour_window ORDER BY hour_window ASC;"
+  },
+  {
+    "id": "Q55",
+    "difficulty": "Advanced",
+    "question": "Count the number of vehicles grouped by both movement direction and vehicle type.",
+    "ground_truth_sql": "SELECT movement_direction, vehicle_type, COUNT(*) AS vehicle_count FROM vehicle_tracks WHERE movement_direction != 'unknown' GROUP BY movement_direction, vehicle_type ORDER BY movement_direction ASC, vehicle_count DESC;"
+  },
+  {
+    "id": "Q56",
+    "difficulty": "Advanced",
+    "question": "For each video sequence, find the average vehicle dwell duration in seconds.",
+    "ground_truth_sql": "SELECT sequence_id, AVG(observed_duration_seconds) AS avg_dwell_time FROM vehicle_tracks GROUP BY sequence_id ORDER BY avg_dwell_time DESC;"
+  },
+  {
+    "id": "Q57",
+    "difficulty": "Advanced",
+    "question": "Find the 5 slowest non-stationary vehicles with their speed, type, and sequence ID.",
+    "ground_truth_sql": "SELECT sequence_id, track_id, vehicle_type, avg_speed_kmh FROM vehicle_tracks WHERE avg_speed_kmh > 0 ORDER BY avg_speed_kmh ASC LIMIT 5;"
+  },
+  {
+    "id": "Q58",
+    "difficulty": "Advanced",
+    "question": "Show the total vehicle count and total frames for sequences processed with more than 800 frames.",
+    "ground_truth_sql": "SELECT s.sequence_id, s.total_frames, COUNT(t.id) AS vehicle_count FROM sequences s JOIN vehicle_tracks t ON s.sequence_id = t.sequence_id WHERE s.total_frames > 800 GROUP BY s.sequence_id, s.total_frames ORDER BY vehicle_count DESC;"
+  },
+  {
+    "id": "Q59",
+    "difficulty": "Advanced",
+    "question": "Today between 2 PM and 3 PM (14:00 to 15:00), how many total vehicles were recorded?",
+    "ground_truth_sql": "SELECT COUNT(*) AS afternoon_vehicle_count FROM vehicle_tracks WHERE (date(entry_datetime) = '2026-11-05' OR date(entry_datetime) = CURRENT_DATE) AND time(entry_datetime) BETWEEN '14:00:00' AND '15:00:00';"
+  },
+  {
+    "id": "Q60",
+    "difficulty": "Advanced",
+    "question": "Calculate the percentage of vehicles that were speeding for each vehicle type.",
+    "ground_truth_sql": "SELECT vehicle_type, COUNT(*) AS total_count, SUM(is_speeding) AS speeding_count, ROUND(AVG(is_speeding) * 100.0, 2) AS speeding_percentage FROM vehicle_tracks GROUP BY vehicle_type ORDER BY speeding_percentage DESC;"
+  }
+]

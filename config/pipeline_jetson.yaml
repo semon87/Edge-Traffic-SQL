@@ -1,0 +1,89 @@
+dataset_root: ../UA-DETRAC/DETRAC-train-data-full
+dataset_fps: 25.0
+direction_min_displacement_pixels: 20.0
+output_dir: outputs/jetson_tuned
+database_path: outputs/jetson_tuned/traffic_analytics.sqlite
+selected_sequences:
+- detrac_1_MVI_20011
+- detrac_2_MVI_20012
+- detrac_3_MVI_20032
+- detrac_4_MVI_20033
+- detrac_5_MVI_20034
+- detrac_6_MVI_20035
+- detrac_7_MVI_20051
+- detrac_8_MVI_20052
+- detrac_9_MVI_20061
+- detrac_10_MVI_20062
+- detrac_11_MVI_20063
+- detrac_12_MVI_20064
+- detrac_13_MVI_20065
+- detrac_14_MVI_39761
+preview:
+  sequence: detrac_3_MVI_20032
+  frame_limit: 60
+  confidence: 0.35
+  image_size: 640
+  output_fps: 25
+model:
+  weights: models/weights/yolo11n.pt
+  device: '0'
+tracker: config/trackers/bytetrack_high_low25.yaml
+tuning:
+  tuning_sequences:
+  - detrac_11_MVI_20063
+  - detrac_12_MVI_20064
+  - detrac_13_MVI_20065
+  held_out_sequence: detrac_14_MVI_39761
+  confidence_thresholds:
+  - 0.25
+  - 0.35
+  - 0.45
+  - 0.55
+  - 0.65
+  roi_polygons:
+    detrac_11_MVI_20063:
+    - - - 300
+        - 540
+      - - 500
+        - 0
+      - - 960
+        - 0
+      - - 960
+        - 540
+    detrac_12_MVI_20064:
+    - - - 300
+        - 540
+      - - 500
+        - 0
+      - - 960
+        - 0
+      - - 960
+        - 540
+    detrac_13_MVI_20065:
+    - - - 300
+        - 540
+      - - 500
+        - 0
+      - - 960
+        - 0
+      - - 960
+        - 540
+    detrac_14_MVI_39761:
+    - - - 0
+        - 80
+      - - 410
+        - 70
+      - - 480
+        - 540
+      - - 0
+        - 540
+    - - - 510
+        - 70
+      - - 960
+        - 80
+      - - 960
+        - 540
+      - - 480
+        - 540
+tracker_input_confidence: 0.25
+write_annotated_video: true

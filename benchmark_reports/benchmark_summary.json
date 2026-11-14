@@ -1,0 +1,25 @@
+{
+  "model_name": "qwen2.5-coder:3b",
+  "provider": "mock",
+  "total_queries": 30,
+  "valid_sql_rate_percent": 100.0,
+  "execution_accuracy_percent": 26.67,
+  "mean_latency_seconds": 0.05,
+  "by_difficulty": {
+    "Simple": {
+      "total": 10,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 40.0
+    },
+    "Intermediate": {
+      "total": 10,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 0.0
+    },
+    "Advanced": {
+      "total": 10,
+      "valid_sql_rate_percent": 100.0,
+      "execution_accuracy_percent": 40.0
+    }
+  }
+}
